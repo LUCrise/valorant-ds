@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= render 'agents/agents_name', agents: @agents %>
+<% else %>
+  <p>まずは<%= link_to 'こちら', signup_path%>からユーザー登録をお願いします。</p>
+<% end %>

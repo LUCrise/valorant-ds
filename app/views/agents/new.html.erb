@@ -1,0 +1,77 @@
+<h1>エージェント新規作成ページ</h1>
+
+    <%= form_with(model: @agent) do |f| %>
+      <% if @agent.errors.any? %>
+        <div id="error_explanation" class = "alert alert-warning">
+          <ul class="mb-0">
+            <% @agent.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :name, 'name' %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div>
+        <%= f.label :image, 'image' %>
+        <%= f.text_field :image %>
+      </div>
+      
+      <div>
+        <%= f.label :role, 'role' %>
+        <%= f.text_field :role %>
+      </div>
+      
+      <div>
+        <%= f.label :description, 'description' %>
+        <%= f.text_field :description %>
+      </div>
+      
+      <div>
+        <%= f.label :skill1_name, 'skill1' %>
+        <%= f.text_field :skill1_name %>
+      </div>
+      
+      <div>
+        <%= f.label :skill1_detail, '説明' %>
+        <%= f.text_field :skill1_detail %>
+      </div>
+      
+      <div>
+        <%= f.label :skill2_name, 'skill2' %>
+        <%= f.text_field :skill2_name %>
+      </div>
+      
+      <div>
+        <%= f.label :skill2_detail, '説明' %>
+        <%= f.text_field :skill2_detail %>
+      </div>
+      
+      <div>
+        <%= f.label :skill3_name, 'skill3' %>
+        <%= f.text_field :skill3_name %>
+      </div>
+      
+      <div>
+        <%= f.label :skill3_detail, '説明' %>
+        <%= f.text_field :skill3_detail %>
+      </div>
+      
+      <div>
+        <%= f.label :skill4_name, 'skill4' %>
+        <%= f.text_field :skill4_name %>
+      </div>
+      
+      <div>
+        <%= f.label :skill4_detail, '説明' %>
+        <%= f.text_field :skill4_detail %>
+      </div>
+      
+      
+
+      <%= f.submit '作成'%>
+    <% end %>
