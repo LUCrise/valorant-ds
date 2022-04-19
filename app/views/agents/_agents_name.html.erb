@@ -3,7 +3,11 @@
     <% @agents.each do |agent| %>
       <li class = "name">
         <div>
-          <p><%= link_to agent.name, agent %>///<%= link_to '削除', agent, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></p>
+          <p><%= link_to agent.name, agent %>
+            <% if current_user.admin? %>
+              <%= link_to '削除', agent, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+            <% end %>
+          </p>
         </div>
       </li>
     <% end %>

@@ -4,7 +4,6 @@
   <p>まずは<%= link_to 'こちら', signup_path%>からユーザー登録をお願いします。</p>
 <% end %>
 
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
 <%= link_to 'エージェント新規作成', new_agent_path %>
-<% else %>
 <% end %>

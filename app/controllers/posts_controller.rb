@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   
-  before_action :require_user_logged_in, only: [:index, :new, :create, :destroy]
+  before_action :require_user_logged_in, only: :index
+  before_action :admin_user, only: [:new, :create, :destroy]
+  
   
   def index
     @posts = Post.all
@@ -40,4 +42,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content).merge(agent_id: params[:agent_id])
   end
+  
+  def admin_user
+      redirect_to(root_url) unless current_user.admin?
+  end
+  
 end
