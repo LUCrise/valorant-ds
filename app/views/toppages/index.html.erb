@@ -1,4 +1,8 @@
-<%= render 'toppages/index', agents: @agents %>
+<% if logged_in? %>
+  <%= render 'agents/agents_name', agents: @agents %>
+<% else %>
+  <p>まずは<%= link_to 'こちら', signup_path%>からユーザー登録をお願いします。</p>
+<% end %>
 
 <% if logged_in? %>
 <%= link_to 'エージェント新規作成', new_agent_path %>

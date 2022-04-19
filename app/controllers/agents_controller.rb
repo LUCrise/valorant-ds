@@ -19,7 +19,9 @@ class AgentsController < ApplicationController
   end
 
   def show
+    @agents = Agent.all
     @agent = Agent.find(params[:id])
+    @posts = Post.where(agent_id:@agent.id)
   end
 
   def destroy

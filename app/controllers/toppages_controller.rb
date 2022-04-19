@@ -1,5 +1,5 @@
 class ToppagesController < ApplicationController
   def index
-    @agent = Agent.all
+    @agents = Agent.all
   end
 end

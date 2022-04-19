@@ -1,4 +1,7 @@
 <!--エージェント一覧のリンクを実装したいが手間取り中-->
+<!--上記内容はインスタンス変数の表記を変えることによって解決-->
+
+<%= render 'agents/agents_name', agents: @agents %>
 
 <p><%= @agent.name %></p>
 <p><%= @agent.role %></p>
@@ -34,3 +37,13 @@
 </div>
 
 <!--ここより下に詳細説明の投稿が入る-->
+
+<p>スキルに関する詳細情報</p>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.content %>///<%= link_to '削除', agent_post_path(@agent,post), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+  <% end %>
+</ul>
+
+<%= link_to '詳細の新規作成', new_agent_post_path(agent_id:@agent.id) %>
