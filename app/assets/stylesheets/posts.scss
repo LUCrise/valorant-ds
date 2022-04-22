@@ -1,3 +1,23 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.info-title{
+  width:100%;
+  padding:5px;
+  background-color:#c0c0c0;
+  font-size:25px;
+  text-align:center;
+  border:solid 2px black;
+}
+
+.skill-info{
+  width:100%;
+  padding:20px;
+}
+
+.skill-info li{
+  list-style:none;
+  padding:20px;
+  border: double 4px #c0c0c0;
+}

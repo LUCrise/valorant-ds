@@ -14,10 +14,11 @@ class PostsController < ApplicationController
   
   def create
     @post = current_user.posts.build(post_params)
+    agent_id = @post.agent.id
     
     if @post.save
       flash[:success] = '正常に投稿されました'
-      redirect_to "/"
+      redirect_to agent_path(agent_id)
     else
       flash.now[:danger] = '投稿されませんでした'
       render :new

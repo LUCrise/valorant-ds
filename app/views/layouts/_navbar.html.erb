@@ -1,22 +1,18 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid ps-5 pe-5">
-      <a class="navbar-brand" href="/">VALORANT DATA STATION</a>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <% if logged_in? %>
-          <div>
-            <ul>
-              <li class ="logout"><%= link_to 'ログアウト', logout_path, method: :delete%></li>
-            </ul>
-          </div>
-        <% else %>
-        <ul class="navbar">
-          <li><%= link_to '新規登録', signup_path %></li>
-          <li><%= link_to 'ログイン', login_path %></li>
-        </ul>
-        <% end %>
-      </div>
-    </div>
-  </nav>
+<header>
+  <div class = "header-title">
+    <a href="/">VALORANT DATA STATION</a>
+  </div>
+  
+  <div class = "nav-item">
+    <% if logged_in? %>
+      <ul class = "logout">
+        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul class = "login">
+        <li><%= link_to '新規登録', signup_path %></li>
+        <li><%= link_to 'ログイン', login_path %></li>
+      </ul>
+    <% end %>
+  </div>
 </header>

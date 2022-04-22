@@ -1,14 +1,47 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.logout{
-  list-style:none;
+
+header{
+  height:120px;
+  width:100%;
+  box-sizing: border-box;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image:url(./logo.jpg);
 }
 
-.name{
-  list-style:none;
+.header-title{
+  display:inline-block;
+  padding-left:33%;
+  padding-bottom:8px;
+  font-style: oblique;
+  font-size:50px;
 }
 
-.navbar{
+.header-title a{
+  text-decoration: none;
+  color:white;
+}
+
+.nav-item{
+  display:inline-block;
+  padding-right:80px;
+}
+
+.nav-item li{
   list-style:none;
+  padding:10px;
+  margin:5px;
+  background-color:#696969;
+}
+
+.nav-item li:hover{
+  background-color:#c0c0c0;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color:white;
 }

@@ -1,3 +1,134 @@
 // Place all the styles related to the agents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.container{
+  width:100%;
+}
+
+.agent-link{
+  padding:0 120px;
+  background-color:#c0c0c0;
+  font-size:0px;
+}
+
+.agent-link a{
+  color:white;
+  display:inline-block;
+  width:120px;
+  text-align:center;
+  font-size:16px;
+  padding:10px 20px;
+  border:solid 2px black;
+  background-color:#9f166a;
+}
+
+.agent-link a:hover{
+  background-color:#e4007f;
+}
+
+.agent-info{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.agent-left{
+  text-align:center;
+  width:50%
+}
+
+.agent-left p{
+  padding:5px;
+  background-color:#fffff0;
+  border:outset 6px #a9a9a9;
+}
+
+.agent-right{
+  width:50%;
+}
+
+.agent-right li{
+  list-style:none;
+}
+
+.description{
+  padding: 0.5em 1em;
+  margin-bottom:20px;
+  background: #e0ffff;
+  border-left: solid 10px #00ffff;
+  box-shadow:0px 10px #40e0d0;
+}
+
+.agent-description{
+  padding:10px;
+  text-align:center;
+}
+
+.skill1{
+  margin:20px 0px;
+  border:outset 6px #a9a9a9;
+}
+
+.skill1-name{
+  padding:10px;
+  text-align:center;
+  text-decoration: underline;
+  text-decoration-style:double;
+}
+
+.skill1-detail{
+  padding:10px;
+}
+
+.skill2{
+  margin:20px 0px;
+  border:outset 6px #a9a9a9;
+}
+
+.skill2-name{
+  padding:10px;
+  text-align:center;
+  text-decoration: underline;
+  text-decoration-style:double;
+}
+
+.skill2-detail{
+  padding:10px;
+}
+
+.skill3{
+  margin:20px 0px;
+  border:outset 6px #a9a9a9;
+}
+
+.skill3-name{
+  padding:10px;
+  text-align:center;
+  text-decoration: underline;
+  text-decoration-style:double;
+}
+
+.skill3-detail{
+  padding:10px;
+}
+
+.skill4{
+  margin:20px 0px;
+  border:outset 6px #a9a9a9;
+}
+
+.skill4-name{
+  padding:10px;
+  text-align:center;
+  text-decoration: underline;
+  text-decoration-style:double;
+}
+
+.skill4-detail{
+  padding:10px;
+}

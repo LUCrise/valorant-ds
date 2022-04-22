@@ -1,53 +1,63 @@
-<%= render 'agents/agents_name', agents: @agents %>
-
-<p><%= @agent.name %></p>
-<p><%= @agent.role %></p>
-
-<p><%= image_tag @agent.image.url if @agent.image? %></p>
-
-<!--ここより下がスキル名とその説明-->
-
-<div class = "skill1">
-  <ul>
-    <li class = "skill1_name"><%= @agent.skill1_name %></li>
-    <li class = "skill1_detail"><%= @agent.skill1_detail %></li>
-  </ul>
+<%= render 'agents/agents_link', agents: @agents %>
+<div class = "agent-info">
+  <div class = "agent-left">
+    <p><%= @agent.name %></p>
+    <p><%= @agent.role %></p>
+  <p><%= image_tag @agent.image.url if @agent.image? %></p>
+  </div>
+  <!--ここより下がスキル名とその説明-->
+  <div class = "agent-right">
+    
+    <div class = "description">
+      <ul>
+        <li class = "agent-description"><%= @agent.description%></li>
+      </ul>
+    </div>
+    
+    <div class = "skill1">
+      <ul>
+        <li class = "skill1-name"><%= @agent.skill1_name %></li>
+        <li class = "skill1-detail"><%= @agent.skill1_detail %></li>
+      </ul>
+    </div>
+    
+    <div class = "skill2">
+      <ul>
+        <li class = "skill2-name"><%= @agent.skill2_name %></li>
+        <li class = "skill2-detail"><%= @agent.skill2_detail %></li>
+      </ul>
+    </div>
+    
+    <div class = "skill3">
+      <ul>
+        <li class = "skill3-name"><%= @agent.skill3_name %></li>
+        <li class = "skill3-detail"><%= @agent.skill3_detail %></li>
+      </ul>
+    </div>
+    
+    <div class = "skill4">
+      <ul>
+        <li class = "skill4-name"><%= @agent.skill4_name %></li>
+        <li class = "skill4-detail"><%= @agent.skill4_detail %></li>
+      </ul>
+    </div>
+  </div>
 </div>
-
-<div class = "skill2">
-  <ul>
-    <li class = "skill2_name"><%= @agent.skill2_name %></li>
-    <li class = "skill2_detail"><%= @agent.skill2_detail %></li>
-  </ul>
-</div>
-
-<div class = "skill3">
-  <ul>
-    <li class = "skill3_name"><%= @agent.skill3_name %></li>
-    <li class = "skill3_detail"><%= @agent.skill3_detail %></li>
-  </ul>
-</div>
-
-<div class = "skill4">
-  <ul>
-    <li class = "skill4_name"><%= @agent.skill4_name %></li>
-    <li class = "skill4_detail"><%= @agent.skill4_detail %></li>
-  </ul>
-</div>
-
 <!--ここより下に詳細説明の投稿が入る-->
 
-<p>スキルに関する詳細情報</p>
+<p class = "info-title">スキル詳細</p>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= post.content %>
-      <% if current_user.admin? %>
-        <%= link_to '削除', agent_post_path(@agent,post), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class = "skill-info">
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= safe_join(post.content.split("\n"),tag(:br)) %>
+        <% if current_user.admin? %>
+          <%= link_to '削除', agent_post_path(@agent,post), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <% if current_user.admin? %>
   <%= link_to '詳細の新規作成', new_agent_post_path(agent_id:@agent.id) %>

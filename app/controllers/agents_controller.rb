@@ -11,10 +11,8 @@ class AgentsController < ApplicationController
     @agent = current_user.agents.build(agent_params)
 
     if @agent.save
-      flash[:success] = 'エージェントが正常に作成されました'
       redirect_to "/"
     else
-      flash.now[:danger] = 'エージェントが作成されませんでした'
       render :new
     end
   end
@@ -28,8 +26,6 @@ class AgentsController < ApplicationController
   def destroy
     @agent = Agent.find(params[:id])
     @agent.destroy
-    
-    flash[:success] = 'エージェントは正常に削除されました'
     redirect_to "/"
   end
   

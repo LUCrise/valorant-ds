@@ -1,9 +1,11 @@
-<% if logged_in? %>
-  <%= render 'agents/agents_name', agents: @agents %>
-<% else %>
-  <p>まずは<%= link_to 'こちら', signup_path%>からユーザー登録をお願いします。</p>
-<% end %>
+<div>
+  <% if logged_in? %>
+    <%= render 'agents/agents_link', agents: @agents %>
+  <% else %>
+    <p>まずは<%= link_to 'こちら', signup_path%>からユーザー登録をお願いします。</p>
+  <% end %>
+</div>
 
-<% if logged_in? && current_user.admin? %>
-<%= link_to 'エージェント新規作成', new_agent_path %>
-<% end %>
+  <% if logged_in? && current_user.admin? %>
+  <%= link_to 'エージェント新規作成', new_agent_path %>
+  <% end %>

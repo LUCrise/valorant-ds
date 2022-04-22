@@ -1,0 +1,12 @@
+<% if @agents.any? %>
+  <div class = "agent-link">
+    <% @agents.each do |agent| %>
+    
+      <%= link_to agent.name, agent %>
+      
+      <% if current_user.admin? %>
+        <%= link_to '削除', agent, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

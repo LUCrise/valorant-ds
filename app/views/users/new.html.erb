@@ -1,34 +1,33 @@
-<div class = "title">
-  <h1>ユーザー新規登録</h1>
-</div>
+<div class = "signup-page">
 
-<div>
-  <div>
+  <div class = "signup-title">
+    <h1>ユーザー新規登録</h1>
+  </div>
 
+  <div class = "form">
     <%= form_with(model: @user) do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
-
-      <div class = "form">
+  
+      <div class = "name">
         <%= f.label :name, 'ユーザーネーム' %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name %>
       </div>
-
-      <div class = "form">
+  
+      <div class = "mail">
         <%= f.label :email, 'Emailアドレス' %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email %>
       </div>
-
-      <div class = "form">
+  
+      <div class = "password">
         <%= f.label :password, 'パスワード' %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password %>
       </div>
-
-      <div class = "form">
+  
+      <div class = "password">
         <%= f.label :password_confirmation, 'パスワード確認' %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation %>
       </div>
-
-      <%= f.submit "登録", class: 'btn btn-primary w-100' %>
+  
+      <%= f.submit "登録" %>
     <% end %>
   </div>
 </div>
