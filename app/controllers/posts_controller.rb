@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  before_action :require_user_logged_in, only: :index
+  before_action :require_user_logged_in
   before_action :admin_user, only: [:new, :create, :destroy]
   
   

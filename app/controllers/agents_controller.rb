@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
   
-  before_action :require_user_logged_in, only: :show
+  before_action :require_user_logged_in
   before_action :admin_user, only: [:new, :create, :destroy]
   
   def new
@@ -36,7 +36,7 @@ class AgentsController < ApplicationController
   end
   
   def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless current_user.present? || current_user.admin?
   end
   
 end
